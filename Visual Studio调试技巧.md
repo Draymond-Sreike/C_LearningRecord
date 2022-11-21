@@ -9,9 +9,16 @@
   > 注意：上例如果按F5跳至断点处之后还可以继续按F5，这时继续这次循环，待到下一次循环又遇到该断点时会又停下来（如第一次按F5执行至断点时，i=0，再按一次F5之后，执行至断点，i=1）
   >
 
-  ​	
-
   - 断点：代码执行到“这个地方”停下来
+  - **条件断点**：用于执行至指定循环次数后产生断点，输入一个条件，满足条件时才会停再断点处
+
+![image-20221121164125043](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221121164125043.png)
+
+![image-20221121164140566](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221121164140566.png)
+
+![image-20221121164151340](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221121164151340.png)
+
+![image-20221121164208080](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221121164208080.png)
 
 - **F5——启动调试**
 
@@ -76,8 +83,11 @@
     > 程序员手动添加要观察的变量，在程序运行调试期间永不销毁，一直观察
 
 - **内存（监视窗口）**
+
 - **反汇编**
+
 - **寄存器**
+
 - **调用堆栈**
 
 **注意：所有的窗口的打开都是在程序运行调试时才能打开，敲代码的程序没办法打开这些窗口**
