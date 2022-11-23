@@ -1,0 +1,2 @@
+printf()包含在<stdio.h>
+system("pause")包含在<stdilb.h>

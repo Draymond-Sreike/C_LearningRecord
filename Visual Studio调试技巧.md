@@ -92,3 +92,63 @@
 
 **注意：所有的窗口的打开都是在程序运行调试时才能打开，敲代码的程序没办法打开这些窗口**
 
+## 栈区小知识
+
+**本节内容在P29（1:21:00~1:46:34处**）
+
+栈区内存的默认分配方式：先使用高地址处的内存空间，再使用低地址处的内存空间（如下图）
+
+![image-20221123155332356](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123155332356.png)
+
+而且是根据变量定义的先后顺序来分配内存，先定义的变量则其内存空间的地址较高，后定义的变量其内存空间地址较低（如下图）
+
+- 但应注意数组：随着下标的增长，地址是由低到高变化的（同样如下图）
+
+![image-20221123155513005](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123155513005.png)
+
+> 另外还应注意，若有代码如下
+>
+> ```c
+> for(int i = 0; i <= 12; i++){}
+> ```
+>
+> ​	该代码实际上是C++代码，不是严格的C代码，因为C代码不允许在for循环的头部来定义变量，即`int i = 0`应该在for循环的头部外定义，才符合C语法，在VS里之所以不报错是因为编译器将该代码视为C++，没有严格按照C的语法给予报错，此处应予以注意！
+
+所以由上图中的内存分析框图可知，如果数组下标越界访问到`arr[12]`时，实际上访问到了变量`i`（如下图所示）
+
+![image-20221123160258739](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123160258739.png)
+
+- 注意在VS中，该案例中的变量`i`与数组`arr[]`最后一个元素的间隔是2个int单位的内存空间（即8个字节），不同的编译器，i与arr[]数组的最后一个元素的间隔不同，有如下规律：
+
+> ![image-20221123163905501](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123163905501.png)
+
+- VC6.0的内存分配间隔布局（<=10就死循环）：	
+
+> <img src="C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123164044593.png" alt="image-20221123164044593" style="zoom:25%;" />
+
+- GCC的内存分配布局（<=11就死循环）：
+
+> <img src="C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123164149992.png" alt="image-20221123164149992" style="zoom:25%;" />
+
+
+
+
+
+- 如果将for循环中的循环条件i<=12改成i<=11则不会死循环，但此时系统会报错，说我们数组越界访问（如下图）
+
+![image-20221123163616963](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123163616963.png)
+
+![image-20221123163629560](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123163629560.png)
+
+- 之所以i<=12的时候不会报错，是因为陷入了死循环，编译器没有机会来给我们报错
+
+- 上述代码产生死循环的原因是i的地址高于数组的地址，而数组又随着下标的增加，其地址增加，当数组越界到一定程度之后，就会访问到地址位于高处的变量i，然后将i的值修改导致死循环。
+- 如果将i的定义放在数组定义之后，也就是说i变量的内存地址比数组的地址低，则数组越界访问时就永远不会访问到i
+
+
+
+- 还应注意VS2022的默认栈内存分配原则变化了，不再是先使用高地址的内存，而是先使用低地址的内存！！！
+
+> ![image-20221123162736862](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123162736862.png)
+>
+> 所以不会有越界访问数组时访问到循环控制变量i的情况发生，而是只会在数组越界访问后程序报错
