@@ -114,7 +114,7 @@
 >
 > ​	该代码实际上是C++代码，不是严格的C代码，因为C代码不允许在for循环的头部来定义变量，即`int i = 0`应该在for循环的头部外定义，才符合C语法，在VS里之所以不报错是因为编译器将该代码视为C++，没有严格按照C的语法给予报错，此处应予以注意！
 
-所以由上图中的内存分析框图可知，如果数组下标越界访问到`arr[12]`时，实际上访问到了变量`i`（如下图所示，arr[12]与i是同一块内存）
+所以由上图中的内存分析框图可知，如果数组下标越界访问到`arr[12]`时，实际上访问到了变量`i`（如下图所示）
 
 ![image-20221123160258739](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123160258739.png)
 
@@ -152,3 +152,9 @@
 > ![image-20221123162736862](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221123162736862.png)
 >
 > 所以不会有越界访问数组时访问到循环控制变量i的情况发生，而是只会在数组越界访问后程序报错
+
+
+
+### Relase版本会对Debug版本做优化
+
+![image-20221124132744570](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20221124132744570.png)
