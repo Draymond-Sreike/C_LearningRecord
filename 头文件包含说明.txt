@@ -1,2 +1,2 @@
 printf()包含在<stdio.h>
-system("pause")包含在<stdilb.h>
+<stdilb.h>（system包含在该文件中，若程序不包含该文件，程序不会报错，只是报警告而已）
