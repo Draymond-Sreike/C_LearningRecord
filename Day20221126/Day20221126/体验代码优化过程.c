@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<assert.h>
+
 void my_strcpy(char* dest, char* src);	// 函数声明
 
 // 测试
@@ -24,7 +26,9 @@ void test()
 /// </param>
 void my_strcpy(char* dest, char* src)
 {
-	while (*dest++ = *src++) {}		// 优化
+	assert( dest != NULL );	// 一旦dest为NULL，该函数就会报错
+	assert( src != NULL );	// 一旦src为NULL，该函数就会报错
+	while ( *dest++ = *src++ ) {}		// 优化
 }
 
 int main()

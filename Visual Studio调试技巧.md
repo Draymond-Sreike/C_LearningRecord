@@ -246,4 +246,101 @@ void my_strcpy(char* dest, char* src)
 
 以上是第二步优化，如果要考虑代码的健壮性，我们可以再继续优化：
 
+我们考虑这样的情况，如果我们在调用这个函数的时候，不小心给`dest`和`src`传了一个空指针：
+
+```c
+void test()
+{
+	char str1[] = "#################";
+	char str2[] = "bit";
+
+	my_strcpy(str1, NULL);	// 传了一个NULL指针
+	printf("%s\n", str1);
+ }
+```
+
+此时代码运行结果如下：
+
+> ![image-20221127203059084](E:\Typora\Image\image-20221127203059084.png)
+>
+> 程序挂掉了！！！因为我们此时在函数中会访问这个`test()`中传过来的空指针`NULL`，这是非法的！
+
+这就说明我们的代码在健壮性方面存在欠缺，原因就是我们的`my_strcpy()`函数中缺乏对形参变量的合法性判断：我们对主调函数传过来的参数，不管三七二十一就直接开始解引用了。
+
+正确的做法是我们应该对这些形参使用前先进行一个判断：
+
+```c
+void my_strcpy(char* dest, char* src)
+{
+	if (dest != NULL && src != NULL)
+	{
+		while (*dest++ = *src++) {}
+	}
+}
+```
+
+此时就算我们的`test()`函数在调用`my_strcpy()`的时候给这个函数传递了一个`NULL`指针，程序运行效果如下：
+
+> <img src="E:\Typora\Image\image-20221127204102585.png" alt="image-20221127204102585" style="zoom:50%;" />
+
+可以看到，现在程序至少能够规避掉这个错误而不会挂掉（这是很重要的！因为程序如果其他部分的功能正常，但是因为你这个地方的问题而程序挂掉了，那么其他部分的功能也执行不了！所以我们至少至少的！应该要保证程序不会挂掉！)
+
+这个时候程序就健壮了一些，但是我们还要考虑到，程序更改成这样之后，其实我们是不容易去发现这个错误(或者说是`BUG`)的。
+
+为了让我们的程序更健壮，并且容易进行Debug，我们调用一个函数：`assert()`（我们称之为：断言），其使用必须先包含一个头文件：`<assert.h>`
+
+> `assert()`这个函数的功能是：我们在这个函数()内传入一个表达式
+>
+> 1. 如果这个表达式的执行结果为真，那么该语句就相当于一个空语句（效果上"相当"，不是执行的时间和空间效率上的"相当"）；
+> 2. 如果这个表达式的执行结果为假，那么程序就会在这里报错，并且会显示程序出错的位置信息
+
+那么我们利用这个函数，对`my_strcpy()`进行进一步的改进：
+
+```c
+void my_strcpy(char* dest, char* src)
+{
+	assert( dest != NULL );	// 一旦dest为NULL，该函数就会报错
+	assert( src != NULL );	// 一旦src为NULL，该函数就会报错
+	while ( *dest++ = *src++ ) {}
+}
+```
+
+此时我们还是在`test()`函数中给`src`传一个`NULL`，程序运行效果如下：
+
+> ![image-20221127205821784](E:\Typora\Image\image-20221127205821784.png)
+>
+> 可以看到此时DOS窗口很好地将代码出错的文件路径，出错的位置（行数）都显示了出来
+
+这样的做法将有利于我们编写程序时去发现BUG。修改后的整体代码如下：
+
+```c
+void my_strcpy(char* dest, char* src);	// 函数声明
+
+// 测试
+void test()
+{
+	char str1[] = "#################";
+	char str2[] = "bit";
+
+//	my_strcpy(str1, NULL);	
+//  my_strcpy(NULL, str2);
+	my_strcpy(str1, str2);	
+    
+    printf("%s\n", str1);
+ }
+
+void my_strcpy(char* dest, char* src)
+{
+	assert( dest != NULL );	// 一旦dest为NULL，该函数就会报错
+	assert( src != NULL );	// 一旦src为NULL，该函数就会报错
+	while ( *dest++ = *src++ ) {}		// 优化
+}
+```
+
+此时当我们把`test()`在调用时传入正常的参数，代码也能够正常运行：
+
+> <img src="E:\Typora\Image\image-20221127210619840.png" alt="image-20221127210619840" style="zoom:50%;" />
+
+
+
 以上就是代码的一个优化的过程
