@@ -24,16 +24,29 @@ void test()
 /// <param name="src">
 /// 要复制的字符串(char*)
 /// </param>
-void my_strcpy(char* dest, char* src)
+void my_strcpy(char* dest, const char* src)
 {
 	assert( dest != NULL );	// 一旦dest为NULL，该函数就会报错
 	assert( src != NULL );	// 一旦src为NULL，该函数就会报错
 	while ( *dest++ = *src++ ) {}		// 优化
 }
 
+void test02()
+{
+	int num1 = 10;
+	int num2 = 20;
+
+	const int* const p = &num1;
+
+	//*p = 20;
+		
+	//p = &num2;
+}
+
 int main()
 {
 	test();
+	test02();
 
 	system("pause");
 	return 0;
