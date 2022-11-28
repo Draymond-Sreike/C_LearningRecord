@@ -7,8 +7,8 @@ char* my_strcpy(char* dest, char* src);		// 函数声明
 // 测试
 void test()
 {
-	char str1[] = "#################";
-	char str2[] = "bit";
+	char str1[] = "################################";
+	char str2[] = "我爱华农！！！华农加油！！！";
 
 	printf("%s\n", my_strcpy(str1, str2));	// 打印被复制后的目标字符串
 }
