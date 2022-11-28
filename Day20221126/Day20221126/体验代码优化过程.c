@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<assert.h>
 
-void my_strcpy(char* dest, char* src);	// 函数声明
+char* my_strcpy(char* dest, char* src);		// 函数声明
 
 // 测试
 void test()
@@ -10,13 +10,12 @@ void test()
 	char str1[] = "#################";
 	char str2[] = "bit";
 
-	my_strcpy(str1, str2);	// 自己实现strcpy
-	printf("%s\n", str1);
- }
+	printf("%s\n", my_strcpy(str1, str2));	// 打印被复制后的目标字符串
+}
 
 
 /// <summary>
-/// 自己实现的strcpy函数
+/// 将src指向的字符串拷贝到dest指向的空间，包括'\0'字符
 /// </summary>
 /// <param name="dest">
 /// 字符串复制的目的地(char*)
@@ -24,29 +23,23 @@ void test()
 /// <param name="src">
 /// 要复制的字符串(char*)
 /// </param>
-void my_strcpy(char* dest, const char* src)
+char* my_strcpy(char* dest, const char* src)
 {
-	assert( dest != NULL );	// 一旦dest为NULL，该函数就会报错
-	assert( src != NULL );	// 一旦src为NULL，该函数就会报错
-	while ( *dest++ = *src++ ) {}		// 优化
+	char* tempSave_Addr = dest;			// 保存目标字符串strDestination的起始地址
+
+	// 以下两行代码是断言，用于保证指针的有效性
+	assert(dest != NULL);				// 一旦dest为NULL，该函数就会浮窗报错
+	assert(src != NULL);				// 一旦src为NULL，该函数就会浮窗报错
+
+	while (*dest++ = *src++) {}		// 将src指向的字符串拷贝到dest指向的空间，包括'\0'字符
+
+	return tempSave_Addr;				// 返回值目标字符串strDestination的起始地址
 }
 
-void test02()
-{
-	int num1 = 10;
-	int num2 = 20;
-
-	const int* const p = &num1;
-
-	//*p = 20;
-		
-	//p = &num2;
-}
 
 int main()
 {
 	test();
-	test02();
 
 	system("pause");
 	return 0;
