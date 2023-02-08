@@ -205,3 +205,9 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 ## 小拓展（多级指针数组）
 
 > ​	<img src="E:\Typora\Image\image-20230115154511978.png" alt="image-20230115154511978" style="zoom:50%;" />
+
+# void类型指针
+
+## 1.void*指针可以接收任意类型的指针（而不报警告）
+
+> <img src="C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20230208121453482.png" alt="image-20230208121453482" style="zoom:50%;" />
