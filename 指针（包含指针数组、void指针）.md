@@ -211,3 +211,33 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 ## 1.void*指针可以接收任意类型的指针（而不报警告）
 
 > <img src="C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20230208121453482.png" alt="image-20230208121453482" style="zoom:50%;" />
+
+## 2.void*指针不能进行解引用、加减操作
+
+因为void*是无类型指针，这就会导致我们对其解引用的时候编译器不知道要访问多少个字节，此时编译代码报错如下：
+
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209122214868.png" alt="image-20230209122214868" style="zoom:50%;" />
+>
+> 非法的间接寻址
+
+再是因为void*是无类型指针，其加减时编译器并不知道要向后或向前迈多少个字节，所以编译代码也会报错：
+
+> ![image-20230209122402941](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209122402941.png)
+>
+> “void*“：未知的大小
+
+要使用void*类型的变量一定要将其强制转换为对应的指针类型再进行使用：
+
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123138378.png" alt="image-20230209123138378" style="zoom:50%;" />
+
+## 案例：qsort函数的使用
+
+> ![image-20230209123544395](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123544395.png)
+
+> ![image-20230209123752385](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123752385.png)
+
+实现cmp_int：
+
+> ![image-20230209124227704](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209124227704.png)
+
+> ![image-20230209124024233](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209124024233.png)
