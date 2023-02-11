@@ -236,8 +236,39 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 
 > ![image-20230209123752385](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123752385.png)
 
-实现cmp_int：
+### 实现cmp_int：
 
 > ![image-20230209124227704](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209124227704.png)
 
 > ![image-20230209124024233](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209124024233.png)
+
+### 实现cmp_float：
+
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211123336938.png" alt="image-20230211123336938" style="zoom:50%;" />
+
+### 实现cmp_stu_by_age：（比较结构体的年龄属性）
+
+> ![image-20230211130533963](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130533963.png)
+
+要观察排序后的结果可以通过调试窗口查看：
+
+> 排序前：
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130602103.png" alt="image-20230211130602103" style="zoom:50%;" />
+>
+> 排序后：
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130635982.png" alt="image-20230211130635982" style="zoom:50%;" />
+
+### cmp_stu_by_name：（比较结构体的名字字符串属性）
+
+> ![image-20230211130744471](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130744471.png)
+
+> 排序前：
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130759720.png" alt="image-20230211130759720" style="zoom:50%;" />
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130836066.png" alt="image-20230211130836066" style="zoom:50%;" />
+
+
+
