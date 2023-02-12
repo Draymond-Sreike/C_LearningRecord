@@ -232,7 +232,7 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 
 ## 案例：qsort函数的使用
 
-> ![image-20230209123544395](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123544395.png)
+> ![image-20230209123544395](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123544395.png)![image-20230212095301185](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230212095301185.png)
 
 > ![image-20230209123752385](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230209123752385.png)
 
