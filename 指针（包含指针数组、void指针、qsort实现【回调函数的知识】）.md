@@ -270,5 +270,15 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 >
 > <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230211130836066.png" alt="image-20230211130836066" style="zoom:50%;" />
 
+### qsort函数实现（实现为bubble_sort）[回调函数的知识]【有必要自己实现一下。。。】
 
+该部分内容讲解见视频 [10：00~35：00](https://www.bilibili.com/video/BV1oi4y1g7CF/?p=40&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
+
+> ![image-20230213144509942](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230213144509942.png)
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230213143009771.png" alt="image-20230213143009771" style="zoom:50%;" />
+>
+> <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230213142943932.png" alt="image-20230213142943932" style="zoom:50%;" />
+>
+> 
 
