@@ -14,9 +14,15 @@
 
 ## sizeof计算经典例题
 
-> ![image-20230218212542417](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230218212542417-16767267607141.png)
+> ![image-20230219163034395](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230219163034395.png)
 
+- `*&a`相当于\*和&相互抵消，所以sizeo(*&a)就相当于sizeof(a)，算的就是数组的大小
 
+- `&a+1`是跳过了一个数组长度的地址：
+
+    > <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230219165718661.png" alt="image-20230219165718661" style="zoom:50%;" />
+
+    
 
 ## 指针指向字符串
 
