@@ -22,7 +22,12 @@
 
     > <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230219165718661.png" alt="image-20230219165718661" style="zoom:50%;" />
 
-    
+
+
+
+> ![image-20230220215714779](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230220215714779.png)
+
+
 
 ## 指针指向字符串
 
