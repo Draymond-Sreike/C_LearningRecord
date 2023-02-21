@@ -12,7 +12,7 @@
 
 > ![image-20230218212242033](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230218212242033.png)
 
-## sizeof计算经典例题
+## sizeof计算经典例题1
 
 > ![image-20230219163034395](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230219163034395.png)
 
@@ -22,12 +22,22 @@
 
     > <img src="D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230219165718661.png" alt="image-20230219165718661" style="zoom:50%;" />
 
-
+## sizeof计算经典例题2
 
 
 > ![image-20230220215714779](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230220215714779.png)
 
+## strlen计算经典好题
 
+> ![image-20230221201110158](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230221201110158.png)
+
+- `strlen(*arr)`和`strlen(arr[1])`相当于将'a'传给了strlen，而'a'的值为97，所以strlen会去访问地址为97的内存（它想要从地址为97的内存处开始数字符直到遇到'\0'），此时就是非法访问，会导致程序崩溃：
+
+    > ![image-20230221202144064](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230221202144064.png)
+    >
+    > 读取位置0x00000061时发生访问冲突（0x00000061即97）
+
+- `strlen(&arr)`中&arr虽然获得的时数组的地址，但其值与数组arr的首元素的地址相同，所以strlen同样是从数组首元素开始向后计数（可以认为strlen在函数将所获得&arr值转化为char*类型，然后在函数里逐个逐个字节地进行内存内容的访问），所以strlen(arr)与strlen(&arr)的结果相同（区别在于strlen(arr)在函数内部不用将所得到的arr转换为char\*，因为其本身就是char\*，而strlen(&arr)则在函数内部发生了将&arr从char (\*parr)[6]数组指针转化为char\*的过程）
 
 ## 指针指向字符串
 
