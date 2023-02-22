@@ -27,6 +27,12 @@
 
 > ![image-20230220215714779](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230220215714779.png)
 
+- 注意sizeof(arr)算的是数组的大小，而sizeof(arr+0)算的是地址的大小，因为arr本身就是一个地址，只是由于sizeof单独配合arr时会将其特殊化而去计算其所对应的数组的大小，当arr配合上+0后再使用sizeof就相当于把arr给去特殊化了。
+
+## sizeof计算经典例题3
+
+> ![image-20230222220341560](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230222220341560.png)
+
 ## strlen计算经典好题
 
 > ![image-20230221201110158](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230221201110158.png)
