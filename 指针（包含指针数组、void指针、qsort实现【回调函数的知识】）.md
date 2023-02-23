@@ -29,10 +29,6 @@
 
 - 注意sizeof(arr)算的是数组的大小，而sizeof(arr+0)算的是地址的大小，因为arr本身就是一个地址，只是由于sizeof单独配合arr时会将其特殊化而去计算其所对应的数组的大小，当arr配合上+0后再使用sizeof就相当于把arr给去特殊化了。
 
-## sizeof计算经典例题3
-
-> ![image-20230222220341560](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230222220341560.png)
-
 ## strlen计算经典好题
 
 > ![image-20230221201110158](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230221201110158.png)
@@ -43,7 +39,21 @@
     >
     > 读取位置0x00000061时发生访问冲突（0x00000061即97）
 
-- `strlen(&arr)`中&arr虽然获得的时数组的地址，但其值与数组arr的首元素的地址相同，所以strlen同样是从数组首元素开始向后计数（可以认为strlen在函数将所获得&arr值转化为char*类型，然后在函数里逐个逐个字节地进行内存内容的访问），所以strlen(arr)与strlen(&arr)的结果相同（区别在于strlen(arr)在函数内部不用将所得到的arr转换为char\*，因为其本身就是char\*，而strlen(&arr)则在函数内部发生了将&arr从char (\*parr)[6]数组指针转化为char\*的过程）
+- `strlen(&arr)`中&arr虽然获得的时数组的地址，但其值与数组arr的首元素的地址相同，所以strlen同样是从数组首元素开始向后计数（因为strlen再函数内部会将所获得&arr值转化为char*类型，然后在函数里逐个逐个字节地进行内存内容的访问），所以strlen(arr)与strlen(&arr)的结果相同（区别在于strlen(arr)在函数内部不用将所得到的arr转换为char\*，因为其本身就是char\*，而strlen(&arr)则在函数内部发生了将&arr从char (\*parr)[6]数组指针转化为char\*的过程）
+
+## sizeof和strlen对比
+
+### sizeof
+
+> ![image-20230223215811167](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230223215811167.png)
+
+### strlen
+
+> ![image-20230223231848959](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230223231848959.png)
+
+
+
+> ![image-20230223231408798](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230223231408798.png)
 
 ## 指针指向字符串
 
