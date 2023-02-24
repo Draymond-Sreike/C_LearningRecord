@@ -49,11 +49,17 @@
 
 ### strlen
 
-> ![image-20230223231848959](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230223231848959.png)
-
-
-
+> ![image-20230224233651496](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230224233651496.png)
+>
+> 
+>
 > ![image-20230223231408798](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230223231408798.png)
+
+- 第14代码会报警告，因为发生了强制类型转换：
+
+    > ![image-20230224233427654](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230224233427654.png)
+
+
 
 ## 指针指向字符串
 
