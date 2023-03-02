@@ -33,6 +33,10 @@
 
 > ![image-20230227215248166](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230227215248166.png)
 
+## sizeof计算经典例题4(int a\[3][4] = { 0 })
+
+> ![image-20230302231347808](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230302231347808.png)
+
 ## strlen计算经典好题
 
 > ![image-20230221201110158](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230221201110158.png)
