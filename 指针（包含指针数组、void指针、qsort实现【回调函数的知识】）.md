@@ -382,3 +382,13 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 >
 > 
 
+# 指针计算好题
+
+> ![image-20230311211823654](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230311211823654.png)
+
+## 结构体指针+1
+
+> ![image-20230311211700222](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230311211700222.png)
+
+- 注意0x100000(即p)在强转为unsigned long类型时其值会变化为对应的十进制：1048576
+
