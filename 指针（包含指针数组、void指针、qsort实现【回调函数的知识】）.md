@@ -386,9 +386,18 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 
 > ![image-20230311211823654](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230311211823654.png)
 
-## 结构体指针+1
+## 好题1：结构体指针+1
 
 > ![image-20230311211700222](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230311211700222.png)
 
 - 注意0x100000(即p)在强转为unsigned long类型时其值会变化为对应的十进制：1048576
 
+## 好题2
+
+> ![image-20230312223028484](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230312223028484.png)
+
+内存示意图：
+
+> ![image-20230312223206573](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230312223206573.png)
+
+- 另外注意这里小端存储在取出是不是20 00 00 00而是02 00 00 00，因为小端存储倒放的单位是字节。 
