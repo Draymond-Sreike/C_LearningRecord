@@ -415,3 +415,9 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 > ![image-20230318220257432](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230318220257432.png)
 
 视频讲解见 [20:00-视频末](https://www.bilibili.com/video/BV1oi4y1g7CF/?p=44&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
+
+## 好题5（二级数组指针int aa\[2][5] = {...}）
+
+> ![image-20230319232717181](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230319232717181.png)
+
+视频讲解见 [0:00-10:00](https://www.bilibili.com/video/BV1oi4y1g7CF?p=45&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
