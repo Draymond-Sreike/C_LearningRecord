@@ -421,3 +421,15 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 > ![image-20230319232717181](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230319232717181.png)
 
 视频讲解见 [0:00-10:00](https://www.bilibili.com/video/BV1oi4y1g7CF?p=45&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
+
+## 好题6(char** pa; pa++)
+
+> ![image-20230321223538230](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230321223538230.png)
+
+视频讲解见 [20:00-28:00](https://www.bilibili.com/video/BV1oi4y1g7CF/?p=45&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
+
+- char** pa，当pa++时跳过的是一个char\*大小的空间，即4/8个字节
+
+    这个可用通过int* p；p++这个例子来推理得到，p由于指向的是int类型，所以p++时跳过的是int长度的地址，即4个字节的地址
+
+    而pa指向的是char*类型，所以pa++时跳过的就是char\*长度的地址，即4/8个字节
