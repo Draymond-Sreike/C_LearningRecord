@@ -433,3 +433,8 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
     这个可用通过int* p；p++这个例子来推理得到，p由于指向的是int类型，所以p++时跳过的是int长度的地址，即4个字节的地址
 
     而pa指向的是char*类型，所以pa++时跳过的就是char\*长度的地址，即4/8个字节
+
+## 好题7
+
+> ![image-20230324233832840](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230324233832840.png)
+
