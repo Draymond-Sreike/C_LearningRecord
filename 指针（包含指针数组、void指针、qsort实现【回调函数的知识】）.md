@@ -438,3 +438,6 @@ segmentfault.com(这是国内的一个技术问答社区，仿国外的stackover
 
 > ![image-20230324233832840](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230324233832840.png)
 
+> ![image-20230324235935828](D:\大学\C语言程序设计\C_Learning\C_LearningRecord\image-20230324235935828.png)
+
+视频讲解见 [30：00~视频末](https://www.bilibili.com/video/BV1oi4y1g7CF/?p=45&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=b8a7d9f6d396acb27e811371a96d6e9a)
